@@ -44,15 +44,15 @@ LED = 17
 
 # Define the setup general status:
 def setup():
-    global power
+    global PWR
     GPIO.setmode(GPIO.BCM) # Say to RPI that we're using the BCM GPIO numeration.
     GPIO.setup(LED, GPIO.OUT) # Set the LED pin as an output.
     #pwm = GPIO.PWM(LED, 200) # Coment 1: See down.
-    power.start(100) # Starting at a brightness of 100%
+    PWR.start(100) # Starting at a brightness of 100%
 
 # Defining the brightness variation cycle:
 def set_brightness(new_brightness):
-    power.ChangeDutyCycle(new_brightness) # Sets brightness of the LED by change duty cycle.
+    PWR.ChangeDutyCycle(new_brightness) # Sets brightness of the LED by change duty cycle.
 
 def flicker(): # Coment 2: See down.
     set_brightness(random.randrange(0, 100))
@@ -92,7 +92,3 @@ loop()
 #      a nice flicker effect. Play with these values to make the 
 #      effect suit your liking.
 ####################################################################
-
-# fhdsafhdas fdhasjfhdas fdashf
-
-
